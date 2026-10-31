@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RH TRANS
 
-## Getting Started
+Landing page travel Pringsewu - Jabodetabek. Next.js 16 + Tailwind, deploy ke Vercel.
 
-First, run the development server:
+## Jalankan lokal
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy ke Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Push repo ini ke GitHub.
+2. Buka https://vercel.com/new, import repo.
+3. Framework terdeteksi otomatis (Next.js). Klik Deploy tanpa setting tambahan.
 
-## Learn More
+## Ubah data
 
-To learn more about Next.js, take a look at the following resources:
+- Nomor WhatsApp: `lib/booking.ts` (`WA_NUMBER`).
+- Daftar mobil dan deskripsi: `CARS` di `app/page.tsx`.
+- Teks pesan WhatsApp: `buildBookingMessage` di `lib/booking.ts`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+node --experimental-strip-types --test lib/booking.test.ts
+```
 
-## Deploy on Vercel
+## Aset
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`public/images/logo/logo.png`, `public/images/hero/main-car.png`, `public/images/about/vehicle-lineup.png`. `hero-bg.png` tidak dipakai karena warnanya di luar palet putih-biru.
